@@ -10,13 +10,17 @@ import (
 	"time"
 )
 
+func init() {
+	rand.Seed(time.Now().UnixNano())
+}
+
 func randStr(a int) string {
 	str := "0123456789abcdefghijklmnopqrstuvwxyz-"
 	bytes := []byte(str)
 	result := []byte{}
-	r := rand.New(rand.NewSource(time.Now().UnixNano()))
+	// r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	for i := 0; i < a; i++ {
-		result = append(result, bytes[r.Intn(len(bytes))])
+		result = append(result, bytes[rand.Intn(len(bytes))])
 	}
 	return string(result)
 }
