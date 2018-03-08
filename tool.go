@@ -27,7 +27,6 @@ func randStr(a int) string {
 
 func getTime() string {
 	return time.Now().Add(-8 * time.Hour).Format("2006-01-02T15:04:05Z")
-
 }
 
 func alReplace(value string) string {
